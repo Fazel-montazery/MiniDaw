@@ -1,7 +1,16 @@
-#include <stdio.h>
+#include <pipewire/pipewire.h>
 
-int main(int argc, char** argv)
+#include "log.h"
+#include "state.h"
+
+int main(int argc, char *argv[])
 {
-        printf("Hello, DAW!\n");
-        return 0;
+        Result result = SUCCESS;
+
+        pw_init(&argc, &argv);
+ 
+        printMsg("Compiled with libpipewire %s\n", pw_get_library_version());
+
+        pw_deinit();
+        return result;
 }
