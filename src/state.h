@@ -5,7 +5,10 @@
 // Return states
 typedef enum {
         SUCCESS = 0,
-        FAIL
+        FAIL,
+        ERROR_PW_LOOP_CREATION,
+        ERROR_PW_CONTEXT_CREATION,
+        ERROR_PW_CONTEXT_CONNECTION
 } Result;
 
 void printResult(Result r);
